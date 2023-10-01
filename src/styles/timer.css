@@ -1,0 +1,18 @@
+.timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0099ff;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 40%;
+  }
+  
+  @media (max-width: 576px) {
+    .timer {
+      width: 100%;
+    }
+  }
+  

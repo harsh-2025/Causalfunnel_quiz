@@ -1,0 +1,316 @@
+/* /* Reset some default styles to ensure consistency */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and borders in element sizing */
+}
+
+/* Set a background color and basic font styles */
+/* body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+} */
+/* Set a gradient background color */
+body {
+  background: linear-gradient(45deg, #ff6b6b, #ffb88c); /* You can adjust the colors as needed */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-size: cover; /* Ensure the gradient covers the entire background */
+  background-attachment: fixed; /* Fixed background for better effect */
+}
+
+/* Rest of your CSS styles */
+/* ... */
+
+/* Container for the entire app */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Quiz header styles */
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Start page styles */
+.start-page {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Start page form styles */
+.start-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-page label,
+.start-page input,
+.start-page button {
+  margin-bottom: 10px;
+}
+
+/* Quiz question styles */
+.quiz-question {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.selected-pink {
+  color: rgb(244, 6, 45);
+}
+/* Timer styles */
+.timer {
+  text-align: right;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Question navigation styles */
+.question-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.question-navigation button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.question-navigation button.visited {
+  background-color: #ffc107;
+}
+
+.question-navigation button.attempted {
+  background-color: #28a745;
+}
+
+/* Question and answer styles */
+.question {
+  margin-bottom: 20px;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+
+/* Result styles */
+.result {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Adjust styles for tablet and smaller screens */
+  .App {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .start-page form {
+    padding: 10px;
+  }
+
+  .question-navigation button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust styles for mobile devices */
+  h1 {
+    font-size: 20px;
+  }
+
+  .timer {
+    font-size: 16px;
+  }
+
+  .question-navigation {
+    flex-wrap: wrap;
+  }
+
+  .question-navigation button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Question number box styles */
+.question-number-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.question-number {
+  margin-right: 5px;
+  padding: 8px;
+  background-color: #ffa500; /* Orange for unvisited questions */
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* CSS for the options */
+.answer {
+  background-color: white; /* Set the default background color to white */
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a transition for a smooth color change */
+}
+
+.answer.selected {
+  background-color: #4caf50; /* Set the backgfround color to green for the selected option */
+  color: white; /* Change the text color to white for better visibility */
+}
+.answer.selected {
+  background-color: green; /* or any other desired color */
+  color: white; /* text color */
+}
+
+.question-number.current {
+  background-color: #007bff; /* Blue for the current question */
+}
+
+.question-number.attempted {
+  background-color: #28a745; /* Green for attempted questions */
+}
+/* CSS for the question number box */
+.question-number-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* CSS for the question number grid */
+.question-number-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  gap: 5px; /* Spacing between question numbers */
+}
+
+/* CSS for the question number boxes */
+.question-number {
+  padding: 8px;
+  background-color: #191817; /* Orange for unvisited questions */
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.question-number.current {
+  background-color: #007bff; /* Blue for the current question */
+}
+
+.question-number.attempted {
+  background-color: #28a745; /* Green for attempted questions */
+}
+.selected {
+  background-color: blue; /* Change to your desired red color */
+  color: white; /* Add white text color for better contrast */
+}
+.answer.selected {
+  background-color: #0099ff; /* Add your desired red color */
+  color: white; /* Add white text color for better contrast */
+}
+/* Media query for mobile screens */
+@media (max-width: 576px) {
+  .question-number-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for mobile */
+  }
+}
+/* CSS for changing the selected option */
+
+/* CSS for the answer options */
+.answer {
+  padding: 8px;
+  margin: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+
+/* Additional CSS styles for better user experience (optional) */
+.answer:hover {
+  background-color: gray; /* Change background color on hover */
+}
+/* Add this CSS to your stylesheets */
+/* Hide the default radio button */
+.answer input[type="radio"] {
+  display: none;
+}
+/* Create a custom radio button */
+.answer label::before {
+  content: "";
+  display: inline-block;
+  width: 12px; /* Adjust the size as needed */
+  height: 12px; /* Adjust the size as needed */
+  margin-right: 8px; /* Adjust the spacing as needed */
+  border: 2px solid #ccc; /* Border color for unselected */
+  border-radius: 50%; /* Make it circular */
+  background-color: white;
+}
+
+/* Style the custom radio button when selected */
+.answer.selected input[type="radio"]:checked + label::before {
+  border: 2px solid blue; /* Border color for selected */
+  background-color: black; /* Background color for selected */
+}

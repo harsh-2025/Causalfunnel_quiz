@@ -1,0 +1,152 @@
+.start-page {
+    width: 50%;
+    height: 80vh;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, #0099ff, #00ccff);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+   
+    justify-content: center;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 576px) {
+    .start-page {
+        margin-top: 12.5%;
+        margin-bottom: 12.5%;
+      width: 75%;
+    }
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: white;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  form {
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  input {
+    
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  input,
+button {
+  border-radius: 5px;
+}
+@media (max-width: 576px) {
+    .start-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 1rem;
+    
+    
+    background-color: #3ed73e;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #637c63;
+  }
+  
+  @keyframes startQuizButtonAnimation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  
+  .start-page button {
+    animation: startQuizButtonAnimation 5s linear infinite;
+  }
+  @media (max-width: 576px) {
+    /* CSS for mobile devices */
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+    /* CSS for tablet devices */
+  }
+  @media (max-width: 576px) {
+    /* CSS for mobile devices */
+  }
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+    /* CSS for tablet devices */
+  }
+  @media (max-width: 576px) {
+    form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    input,
+    button {
+      margin: 10px 0;
+    }
+  }
+  .rules {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .rules h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .rules .rule {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .rules .rule::before {
+    content: "•";
+    margin-right: 5px;
+    font-size: 1.2rem;
+    color: #ccc;
+  }
+  /* Define a loader animation */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto; /* Center the loader */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
